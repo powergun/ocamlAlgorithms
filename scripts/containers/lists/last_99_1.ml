@@ -1,5 +1,9 @@
 #!/usr/bin/env ocaml
 
+(* 
+99 problems 1, 2
+*)
+
 let rec last = function
   | [] -> None
   | [x] -> Some x
