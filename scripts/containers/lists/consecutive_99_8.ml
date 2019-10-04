@@ -36,11 +36,30 @@ let rle xs =
     List.rev(rle' [] 0 xs)
   ;;
 
+type 'a rle =
+  | One of 'a
+  | Many of int * 'a;;
+
+let rle_compact l =
+  let createNode count elem =
+    if count = 1 then One elem
+    else Many (count, elem) in
+  let rec aux count acc = function
+    | [] -> []
+    | [x] -> (createNode (count + 1) x) :: acc
+    | hd :: (snd :: _ as tl) ->
+        if hd = snd then aux (count + 1) acc tl
+        else aux 0 ((createNode (count + 1) hd) :: acc) tl 
+  in
+    List.rev (aux 0 [] l)
+  ;;
+
 let runDemos () = 
   let sut = [1; 2; 1; 1; 1; 1; 1; 5; 6; 8; 8] in
   assert(consec_dedup sut = [1; 2; 1; 5; 6; 8]);
   assert(consec_pack sut = [[1]; [2]; [1; 1; 1; 1; 1]; [5]; [6]; [8; 8]]);
   assert(rle sut = [(1, 1); (2, 1); (1, 5); (5, 1); (6, 1); (8, 2)]);
+  assert(rle_compact sut = [One 1; One 2; Many (5, 1); One 5; One 6; Many (2, 8)]);
   ;;
 
 runDemos();;
