@@ -24,10 +24,23 @@ let consec_pack xs =
     List.rev (consec_pack' [] [] xs);
   ;;
 
+(* run-length encoding *)
+let rle xs =
+  let rec rle' acc count = function
+    | [] -> []
+    | [x] -> (x, count + 1) :: acc
+    | p :: (x :: _ as xs) ->
+      if p = x then rle' acc (count + 1) xs
+      else rle' ((p, count + 1) :: acc) 0 xs
+  in
+    List.rev(rle' [] 0 xs)
+  ;;
+
 let runDemos () = 
   let sut = [1; 2; 1; 1; 1; 1; 1; 5; 6; 8; 8] in
   assert(consec_dedup sut = [1; 2; 1; 5; 6; 8]);
-  assert(consec_pack sut = [[1]; [2]; [1; 1; 1; 1; 1]; [5]; [6]; [8; 8]])
+  assert(consec_pack sut = [[1]; [2]; [1; 1; 1; 1; 1]; [5]; [6]; [8; 8]]);
+  assert(rle sut = [(1, 1); (2, 1); (1, 5); (5, 1); (6, 1); (8, 2)]);
   ;;
 
 runDemos();;
