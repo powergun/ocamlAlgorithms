@@ -54,12 +54,17 @@ let rle_compact l =
     List.rev (aux 0 [] l)
   ;;
 
+let drle_compact l = 
+  [1];
+  ;;
+
 let runDemos () = 
   let sut = [1; 2; 1; 1; 1; 1; 1; 5; 6; 8; 8] in
   assert(consec_dedup sut = [1; 2; 1; 5; 6; 8]);
   assert(consec_pack sut = [[1]; [2]; [1; 1; 1; 1; 1]; [5]; [6]; [8; 8]]);
   assert(rle sut = [(1, 1); (2, 1); (1, 5); (5, 1); (6, 1); (8, 2)]);
   assert(rle_compact sut = [One 1; One 2; Many (5, 1); One 5; One 6; Many (2, 8)]);
+  assert(drle_compact (rle_compact sut) = sut);
   ;;
 
 runDemos();;
