@@ -54,8 +54,19 @@ let rle_compact l =
     List.rev (aux 0 [] l)
   ;;
 
+(* 
+I can also reverse the resulting (decoded) list but it is cheaper 
+to reverse the initial encoded sequence, which is shorter
+*)
 let drle_compact l = 
-  [1];
+  let rec many acc n x =
+    if n = 0 then acc else many (x :: acc) (n - 1) x in
+  let rec drle_compact' acc = function
+    | [] -> acc
+    | One x :: xs -> drle_compact' (x :: acc) xs
+    | Many (count, x) :: xs -> drle_compact' (many acc count x) xs
+  in 
+    drle_compact' [] (List.rev l)
   ;;
 
 let runDemos () = 
