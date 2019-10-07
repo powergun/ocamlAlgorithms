@@ -5,6 +5,7 @@ note the example on the website
 https://ocaml.org/learn/tutorials/99problems.html
 uses a split-based algorithm 
 I don't like its calling List.length
+but List.length does not throw exception
 *)
 
 let concat s1 s2 =
