@@ -33,4 +33,11 @@ let runDemos () =
   assert(6 = max_consub [-2; 1; -3; 4; -1; 2; 1; -5; 4]);
   ;;
 
+(* 
+
+another way to debug on per-function level is to turn on trace
+NOTE: this must be placed AFTER the function definition!
+#trace max_consub;; 
+
+*)
 runDemos();;
