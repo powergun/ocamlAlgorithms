@@ -1,4 +1,7 @@
-#!/usr/bin/env ocaml
+#!/usr/bin/env coretop
+
+open Base;;
+open Stdio;;
 
 let runDemos () = 
   1;
