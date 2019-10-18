@@ -8,6 +8,7 @@ B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/base_quic
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/bin_prot
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/bin_prot/shape
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/core
+B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/core_bench
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/core_kernel
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/core_kernel/base_for_tests
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/fieldslib
@@ -33,6 +34,8 @@ B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/sexplib0
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/spawn
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/splittable_random
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/stdio
+B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/textutils/ascii_table
+B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/textutils/console
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/time_now
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/typerep
 B /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/variantslib
@@ -47,6 +50,7 @@ S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/base_quic
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/bin_prot
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/bin_prot/shape
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/core
+S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/core_bench
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/core_kernel
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/core_kernel/base_for_tests
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/fieldslib
@@ -72,6 +76,8 @@ S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/sexplib0
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/spawn
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/splittable_random
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/stdio
+S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/textutils/ascii_table
+S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/textutils/console
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/time_now
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/typerep
 S /Users/weining/work/dev/ocaml/github.com/powergun/ocamlFoo/_opam/lib/variantslib

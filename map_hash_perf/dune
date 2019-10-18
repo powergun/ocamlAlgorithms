@@ -1,9 +1,9 @@
 (executable
  (name hash_faster)
- (libraries core base stdio)
+ (libraries core base core_bench stdio)
  (modules Hash_faster))
 
 (executable
  (name map_faster)
- (libraries core base stdio)
+ (libraries core base core_bench stdio)
  (modules Map_faster))
