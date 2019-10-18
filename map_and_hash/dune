@@ -1,5 +1,5 @@
 (library
- (name map)
+ (name map_and_hash)
  (libraries base core stdio)
  (inline_tests)
  (preprocess (pps ppx_jane)))

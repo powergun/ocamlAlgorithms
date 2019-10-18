@@ -1,5 +1,0 @@
-
-let () =
-  Stdio.printf "....\n"
-;;
-
