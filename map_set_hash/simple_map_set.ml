@@ -44,7 +44,19 @@ let%test "create a Counter" =
   true
 ;;
 
-let () =
-  Stdio.printf "asdasd\n"
+let%test "create a Set" =
+  (* 
+  sets are little more than maps where you ignore the data
+  MY NOTE:
+  it's based a tree impl hence the ordering
+  *)
+  let st1 = Set.of_list (module Int) [7; 1; 3; 3; 7] in
+  let st2 = Set.of_list (module Int) [3; 1; 4; 1; 5] in
+  List.iter (Set.union st1 st2 |> Set.to_list) ~f:(
+    fun elem -> Stdio.printf "element(%d) " elem
+  );
+  Stdio.printf "\n";
+
+  true
 ;;
 
