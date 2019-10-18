@@ -43,21 +43,60 @@ module Book = struct
 
     let sexp_of_t t : Sexp.t =
       List [Atom t.title; Atom t.isbn]
+
   end
 
+  include T
+  (* 
+  note that most of the time one should use Comparable.Make 
+  instead of Comparator.Make
+  since the former provides extr helper functions (infix 
+  comparison functions) in addition to the comparator
+  *)
+  include Comparator.Make(T)
+  (* include Comparable.Make(T) *)
+end
+
+(* 
+Much of the code here is devoted to creating a comparison function 
+and s-expression converter for the type Book.t. But if we have the 
+ppx_sexp_conv and ppx_compare syntax extensions enabled (both of 
+which come with the omnibus ppx_jane package),
+
+then we can request that default implementations of these functions 
+be created, as follows.
+*)
+module CD = struct
+  module T = struct
+    type t = { title: string; isbn: string }
+    [@@deriving compare, sexp_of]
+  end
   include T
   include Comparator.Make(T)
 end
 
-let%test "create a map for books" =
+let%test "create a map for books, a set for cds" =
   let _ = Map.empty (module Book) in
   let books = Set.of_list (module Book) [
     { title = "iddqd"; isbn = "1234" };
     { title = "idkfa"; isbn = "3245" };
   ] in
-  Stdio.printf "%d\n" (Set.length books);
+  Stdio.printf "size of book-set: %d\n" (Set.length books);
+
+  let cds = Set.of_list (module CD) [
+    { title = "doom1"; isbn = "1992" };
+    { title = "dune2"; isbn = "1993" };
+  ] in
+  Stdio.printf "size of cd-set: %d\n" (Set.length cds);
 
   true
 ;;
 
+type string_int_map = 
+  int Map.M(String).t
+  [@@deriving sexp]
 
+let%test "applying @@deriving to maps and sets" =
+
+  true
+;;
