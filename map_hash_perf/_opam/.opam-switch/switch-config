@@ -1,0 +1,11 @@
+opam-version: "2.0"
+synopsis:
+  "/Users/wein/work/dev/ocaml/github.com/powergun/ocamlAlgorithms/map_hash_perf"
+opam-root: "/Users/wein/.opam"
+paths {
+  
+}
+variables {
+  user: "wein"
+  group: "staff"
+}
